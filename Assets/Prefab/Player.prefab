@@ -247,15 +247,15 @@ MonoBehaviour:
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: a44bdabe0765e794a97fd3b80f6d4ab4, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -381,12 +381,12 @@ GameObject:
   - component: {fileID: 8105842562071102975}
   - component: {fileID: 4143959885105681691}
   - component: {fileID: -2584361835807228834}
-  - component: {fileID: 3509020262054064429}
   - component: {fileID: 8386165764870020618}
   - component: {fileID: 4512382365897219624}
+  - component: {fileID: 4371747102542131531}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -422,14 +422,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2304706659
+  GlobalObjectIdHash: 990785693
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
+  SceneMigrationSynchronization: 0
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
@@ -465,8 +465,8 @@ MonoBehaviour:
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 0
-  SyncRotAngleX: 1
-  SyncRotAngleY: 1
+  SyncRotAngleX: 0
+  SyncRotAngleY: 0
   SyncRotAngleZ: 0
   SyncScaleX: 0
   SyncScaleY: 0
@@ -497,7 +497,7 @@ MonoBehaviour:
   inputReader: {fileID: 11400000, guid: adca7761350d11f47a5f507cf049115c, type: 2}
   bodyTransform: {fileID: 6686493222556055827}
   rb: {fileID: 4143959885105681691}
-  movementSpeed: 4
+  movementSpeed: 5
   turningRate: 30
 --- !u!50 &4143959885105681691
 Rigidbody2D:
@@ -513,7 +513,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -541,28 +541,6 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   inputReader: {fileID: 11400000, guid: adca7761350d11f47a5f507cf049115c, type: 2}
   turretTransform: {fileID: 5469128062177621941}
---- !u!114 &3509020262054064429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3095903235001645673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99eb1246cd3b3f4e818259c47cbefed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ProjectileLauncher
-  ShowTopMostFoldoutHeaderGroup: 1
-  inputReader: {fileID: 11400000, guid: adca7761350d11f47a5f507cf049115c, type: 2}
-  projectileSpawnPoint: {fileID: 9025268702345905757}
-  serverProjectilePrefab: {fileID: 519459566804231658, guid: c63d0bf0f67ce6f43a20157fe8de46dc, type: 3}
-  clientProjectilePrefab: {fileID: 4714276096693657064, guid: be4021b812c27f2429a6a80991f6646b, type: 3}
-  muzzleFlash: {fileID: 3512143648875539292}
-  playerCollider: {fileID: 7660508900358355297}
-  projectileSpeed: 30
-  fireRate: 0.75
-  muzzleFlashDuration: 0.075
 --- !u!114 &8386165764870020618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,7 +555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   ShowTopMostFoldoutHeaderGroup: 1
   CurrentHealth:
-    m_InternalValue: 100
+    m_InternalValue: 0
   <MaxHealth>k__BackingField: 100
 --- !u!114 &4512382365897219624
 MonoBehaviour:
@@ -594,6 +572,28 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   cinemachineCamera: {fileID: 740224658195374293}
   ownerPriority: 15
+--- !u!114 &4371747102542131531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3095903235001645673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99eb1246cd3b3f4e818259c47cbefed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectileLauncher
+  ShowTopMostFoldoutHeaderGroup: 1
+  inputReader: {fileID: 11400000, guid: adca7761350d11f47a5f507cf049115c, type: 2}
+  projectileSpawnPoint: {fileID: 9025268702345905757}
+  serverProjectilePrefab: {fileID: 782749667293314874, guid: 194c037a311c01148ab5334f907255e9, type: 3}
+  clientProjectilePrefab: {fileID: 4714276096693657064, guid: be4021b812c27f2429a6a80991f6646b, type: 3}
+  muzzleFlash: {fileID: 3512143648875539292}
+  playerCollider: {fileID: 7660508900358355297}
+  projectileSpeed: 30
+  fireRate: 2
+  muzzleFlashDuration: 0.075
 --- !u!1 &3512143648875539292
 GameObject:
   m_ObjectHideFlags: 0
