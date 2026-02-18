@@ -6,7 +6,10 @@ public class TankPlayer : NetworkBehaviour
 {
     [Header("References")]
     [SerializeField]
-    private CinemachineCamera cinemachineCamera;
+    private CinemachineCamera virtualCamera;
+
+    [field: SerializeField] public Health Health { get; private set; }
+    [field: SerializeField] public CoinWallet Wallet { get; private set; }
 
     [Header("Settings")][SerializeField] private int ownerPriority = 15;
 
@@ -14,7 +17,7 @@ public class TankPlayer : NetworkBehaviour
     {
         if (IsOwner)
         {
-            cinemachineCamera.Priority = ownerPriority;
+            virtualCamera.Priority = ownerPriority;
         }
 
     }
