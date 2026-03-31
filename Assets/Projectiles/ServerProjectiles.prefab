@@ -81,4 +81,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47bee4345cb64244e913ca3727e49fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DealDamageOnContact
-  damage: 5
+  projectile: {fileID: 7993376769330195483}
+  damage: 25
+--- !u!114 &7993376769330195483 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1408233546254480595, guid: cbbf932ca57a51749999b42eb6682822, type: 3}
+  m_PrefabInstance: {fileID: 9035664652310173896}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4250164914640250700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1561ceb54e41db54a9c33854122b9be9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Projectile
